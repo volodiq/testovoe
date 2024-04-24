@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     "customer.apps.CustomerConfig",
     "executor.apps.ExecutorConfig",
     "accounts.apps.AccountsConfig",
-    "index.apps.IndexConfig"
+    "index.apps.IndexConfig",
 ]
 
 MIDDLEWARE = [

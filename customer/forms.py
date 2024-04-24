@@ -5,23 +5,15 @@ class CustomerInfoChange(forms.Form):
     first_name = forms.CharField(
         max_length=50,
         widget=forms.TextInput(
-            attrs={
-                "id": "firstName",
-                "placeholder": "Имя",
-                "class": "form-control"
-            }
-        )
+            attrs={"id": "firstName", "placeholder": "Имя", "class": "form-control"}
+        ),
     )
 
     last_name = forms.CharField(
         max_length=50,
         widget=forms.TextInput(
-            attrs={
-                "id": "lastName",
-                "placeholder": "Фамилия",
-                "class": "form-control"
-            }
-        )
+            attrs={"id": "lastName", "placeholder": "Фамилия", "class": "form-control"}
+        ),
     )
 
     phone = forms.CharField(
@@ -34,17 +26,13 @@ class CustomerInfoChange(forms.Form):
                 "placeholder": "+71234567890",
             },
         ),
-        required=False
+        required=False,
     )
 
     email = forms.EmailField(
         max_length=50,
         widget=forms.EmailInput(
-          attrs={
-                "id": "email",
-                "placeholder": "e-mail",
-                "class": "form-control"
-            }
+            attrs={"id": "email", "placeholder": "e-mail", "class": "form-control"}
         ),
-        required = False
+        required=False,
     )

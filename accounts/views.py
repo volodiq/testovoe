@@ -1,9 +1,9 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.views import LoginView
-from django.views.generic import CreateView
-from django.urls import reverse_lazy
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 from customer.models import CustomerProfile
 from executor.models import ExecutorProfile
@@ -16,10 +16,15 @@ class UserRegistrationView(CreateView):
 
     def form_valid(self, form):
         cd = form.cleaned_data
-        user = User.objects.create_user(username=cd["username"], password=cd["password2"])
+
+        user = User.objects.create_user(
+            username=cd["username"], password=cd["password2"]
+        )
+
         # Создание профилей
         CustomerProfile.objects.create(user=user)
         ExecutorProfile.objects.create(user=user)
+
         return redirect(self.success_url)
 
 

@@ -1,5 +1,5 @@
-from django.views.generic import FormView
 from django.urls import reverse_lazy
+from django.views.generic import FormView
 
 from .forms import CustomerInfoChange
 from .models import CustomerProfile
@@ -7,6 +7,7 @@ from .models import CustomerProfile
 
 class ProfileView(FormView):
     """Личный кабинет заказчика"""
+
     template_name = "customer/profile.html"
     form_class = CustomerInfoChange
     success_url = reverse_lazy("customer:profile")

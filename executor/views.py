@@ -1,5 +1,5 @@
-from django.views.generic import FormView
 from django.urls import reverse_lazy
+from django.views.generic import FormView
 
 from .forms import ExecutorInfoChange
 from .models import ExecutorProfile
@@ -7,6 +7,7 @@ from .models import ExecutorProfile
 
 class ProfileView(FormView):
     """Личный кабинет исполнителя"""
+
     template_name = "executor/profile.html"
     form_class = ExecutorInfoChange
     success_url = reverse_lazy("executor:profile")
